@@ -1,0 +1,55 @@
+#!/bin/bash
+
+#init: define starting hours for all employees
+
+#step 1: enter employee name
+#step 2: check if employee name is ali
+#step 2-a: print ali new hours
+#step 2-b: add ali old and new hours
+#step 3: check if employee name is mohsin
+#step 3-a: print mohsin new hours
+#step 3-b: add mohsin old and new hours
+#step 4: check if employee name is anees
+#step 4-a: print anees new hours
+#step 4-b: add anees old and new hours
+#step 5: employees does not exists if the employees is wrong
+#step 5: print employee name and it's hours
+
+anees_hours=40
+ali_hours=20
+mohsin_hours=10
+
+echo "enter name of the employee"
+read name 
+
+if [[ $name == "ali" ]]
+then
+    echo "enter new hours of ali"
+    read ali_new_hours
+    ali_hours=$(( ali_hours + ali_new_hours ))
+
+# echo "enter name of the employee"
+# read name 
+
+elif [[ $name == "mohsin" ]]
+then
+     echo "enter new hours of mohsin"
+     read mohsin_new_hours
+     mohsin_hours=$(( mohsin_hours + mohsin_new_hours ))
+
+# echo "enter name of the employee"
+# read name 
+
+elif [[ $name == "anees" ]]
+then
+     echo "enter new hours of anees"
+     read anees_new_hours
+     anees_hours=$(( anees_hours + anees_new_hours ))
+
+else
+    echo "employee does not exist"
+    exit 0
+fi
+echo "ali - $ali_hours "
+echo "mohsin - $mohsin_hours"
+echo "anees - $anees_hours"
